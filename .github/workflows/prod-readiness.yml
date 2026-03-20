@@ -1,0 +1,117 @@
+name: Production readiness
+
+
+
+on:
+
+  push:
+
+    branches: [main, master]
+
+  pull_request:
+
+    branches: [main, master]
+
+  workflow_dispatch:
+
+
+
+jobs:
+
+  verify:
+
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 45
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+
+
+      - name: Validate Docker Compose
+
+        run: docker compose -f docker/docker-compose.yml config
+
+        working-directory: app_core/test_hardening
+
+
+
+      - uses: actions/setup-node@v4
+
+        with:
+
+          node-version: "22"
+
+          cache: npm
+
+          cache-dependency-path: |
+
+            backend/package-lock.json
+
+            mobile/package-lock.json
+
+            app_core/test_hardening/package-lock.json
+
+
+
+      - name: Install backend
+
+        run: npm ci
+
+        working-directory: backend
+
+
+
+      - name: Install mobile
+
+        run: npm ci
+
+        working-directory: mobile
+
+
+
+      - name: Install test_hardening
+
+        run: npm ci
+
+        working-directory: app_core/test_hardening
+
+
+
+      - name: Playwright browsers
+
+        run: npx playwright install chromium --with-deps
+
+        working-directory: app_core/test_hardening
+
+
+
+      - name: Production readiness verify
+
+        run: npm run run:verify
+
+        working-directory: app_core/test_hardening
+
+        env:
+
+          CI: "true"
+
+          NODE_ENV: test
+
+
+
+      - name: Upload reports
+
+        if: always()
+
+        uses: actions/upload-artifact@v4
+
+        with:
+
+          name: test-hardening-reports
+
+          path: app_core/test_hardening/reports/
+
+

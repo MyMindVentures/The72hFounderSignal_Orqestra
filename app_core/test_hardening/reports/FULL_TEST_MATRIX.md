@@ -1,0 +1,222 @@
+# FULL_TEST_MATRIX
+
+```json
+{
+  "generatedAt": "2026-03-20T00:48:55.660Z",
+  "commit": null,
+  "layers": [
+    "unit",
+    "integration",
+    "ui",
+    "e2e",
+    "security",
+    "runtime",
+    "chaos",
+    "config",
+    "traceability"
+  ],
+  "layerCoverage": {
+    "unit": true,
+    "integration": true,
+    "ui": true,
+    "e2e": true,
+    "security": true,
+    "runtime": true,
+    "chaos": true,
+    "config": true,
+    "database": false,
+    "queues": true,
+    "traceability": true
+  },
+  "phases": {
+    "smoke": {
+      "phase": "smoke",
+      "ok": true,
+      "port": 4239,
+      "at": "2026-03-20T00:48:14.649Z",
+      "checks": [
+        "health",
+        "sse_hello"
+      ]
+    },
+    "regression": {
+      "phase": "regression",
+      "ok": true,
+      "exitCode": 0,
+      "vitest": {
+        "numTotalTests": 45,
+        "numPassedTests": 45,
+        "numFailedTests": 0
+      },
+      "stdout": "\n> autonomous-platform-backend@0.1.0 test\n> vitest run\n\n\n RUN  v3.2.4 D:/GitHub_Local_Repos/VibeCoding_PS/backend\n\n ✓ src/test/admin.test.ts (5 tests) 368ms\n ✓ src/test/blueprints.test.ts (5 tests) 288ms\n ✓ src/test/runs-environments.test.ts (5 tests) 120ms\n ✓ src/test/security-large-body.test.ts (1 test) 68ms\n ✓ src/test/projects.test.ts (4 tests) 58ms\n ✓ src/test/agents-artifacts.test.ts (4 tests) 50ms\n ✓ src/test/security-baseline.test.ts (2 tests) 40ms\n ✓ src/test/stream-sse.test.ts (1 test) 45ms\n ✓ src/test/jobs-tasks.test.ts (3 tests) 34ms\n ✓ src/test/audit-metrics.test.ts (3 tests) 33ms\n ✓ src/test/persistence.test.ts (3 tests) 30ms\n ✓ src/test/workflow-engine-blueprint.test.ts (2 tests) 22ms\n ✓ src/test/global-error.test.ts (1 test) 14ms\n ✓ src/test/health.test.ts (1 test) 12ms\n ✓ src/test/mock-pipeline-provider.test.ts (3 tests) 7ms\n ✓ src/test/agent-task-queue.test.ts (1 test) 3ms\n ✓ src/test/workflow-engine-exports.test.ts (1 test) 2ms\n\n Test Files  17 passed (17)\n      Tests  45 passed (45)\n   Start at  01:48:18\n   Duration  3.78s (transform 477ms, setup 774ms, collect 1.21s, tests 1.19s, environment 0ms, prepare 185ms)\n\nJSON report written to D:/GitHub_Local_Repos/VibeCoding_PS/backend/reports/vitest-results.json\n",
+      "stderr": "stderr | src/test/global-error.test.ts > global error handler > returns 500 JSON for thrown errors\nError: boom\n    at D:\\GitHub_Local_Repos\\VibeCoding_PS\\backend\\src\\routes.ts:35:11\n    at newFn (D:\\GitHub_Local_Repos\\VibeCoding_PS\\backend\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (D:\\GitHub_Local_Repos\\VibeCoding_PS\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\GitHub_Local_Repos\\VibeCoding_PS\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\GitHub_Local_Repos\\VibeCoding_PS\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at newFn (D:\\GitHub_Local_Repos\\VibeCoding_PS\\backend\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (D:\\GitHub_Local_Repos\\VibeCoding_PS\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\GitHub_Local_Repos\\VibeCoding_PS\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (D:\\GitHub_Local_Repos\\VibeCoding_PS\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\GitHub_Local_Repos\\VibeCoding_PS\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n\n",
+      "at": "2026-03-20T00:48:22.723Z"
+    },
+    "deep": {
+      "phase": "deep",
+      "ok": true,
+      "docs": {
+        "status": 0,
+        "stderr": ""
+      },
+      "deps": {
+        "status": 0,
+        "stderr": "(node:18384) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.\n(Use `node --trace-deprecation ...` to show where the warning was created)\n"
+      },
+      "mobileTests": {
+        "status": 0,
+        "stderr": "PASS src/components/__tests__/ProgressRail.test.tsx\nPASS src/components/__tests__/StatusChip.test.tsx\nPASS src/components/__tests__/SegmentedTabs.test.tsx\n\nTest Suites: 3 passed, 3 total\nTests:       4 passed, 4 total\nSnapshots:   0 total\nTime:        3.606 s, estimated 9 s\nRan all test suites.\n"
+      },
+      "at": "2026-03-20T00:48:38.958Z"
+    },
+    "chaos": {
+      "phase": "chaos",
+      "ok": true,
+      "runs": [
+        {
+          "script": "persistence-chaos.mjs",
+          "status": 0,
+          "stderr": ""
+        },
+        {
+          "script": "persistence-readonly.mjs",
+          "status": 0,
+          "stderr": ""
+        },
+        {
+          "script": "invalid-config.mjs",
+          "status": 0,
+          "stderr": ""
+        },
+        {
+          "script": "process-kill-recovery.mjs",
+          "status": 0,
+          "stderr": ""
+        },
+        {
+          "script": "postgres-outage-placeholder.mjs",
+          "status": 0,
+          "stderr": ""
+        },
+        {
+          "script": "process-kill-placeholder.mjs",
+          "status": 0,
+          "stderr": ""
+        },
+        {
+          "script": "soak-placeholder.mjs",
+          "status": 0,
+          "stderr": ""
+        }
+      ],
+      "at": "2026-03-20T00:48:44.481Z"
+    },
+    "e2e": {
+      "phase": "e2e",
+      "ok": true,
+      "exitCode": 0,
+      "stderr": "(node:32648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:7816) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:5652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:5652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:32648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:7816) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n",
+      "at": "2026-03-20T00:48:53.250Z"
+    }
+  },
+  "features": [
+    {
+      "id": "feat-blueprint-upload",
+      "name": "Blueprint upload & job creation",
+      "type": "workflow",
+      "criticality": "P0",
+      "severity": "P0",
+      "lastRun": null,
+      "moduleIds": [
+        "route-blueprints",
+        "workflow-engine"
+      ],
+      "health": "green",
+      "lastVerifiedCommit": null,
+      "testCoverage": "integration",
+      "notes": "Core orchestration path"
+    },
+    {
+      "id": "feat-admin-control",
+      "name": "Admin pause/resume/cancel/priority",
+      "type": "route",
+      "criticality": "P0",
+      "severity": "P0",
+      "lastRun": null,
+      "moduleIds": [
+        "route-admin"
+      ],
+      "health": "green",
+      "lastVerifiedCommit": null,
+      "testCoverage": "integration",
+      "notes": "Header x-role; not production auth"
+    },
+    {
+      "id": "feat-realtime-sse",
+      "name": "SSE stream",
+      "type": "realtime",
+      "criticality": "P1",
+      "moduleIds": [
+        "route-stream",
+        "sse-hub"
+      ],
+      "health": "green",
+      "lastVerifiedCommit": null,
+      "testCoverage": "integration",
+      "notes": ""
+    },
+    {
+      "id": "feat-persistence",
+      "name": "JSON state persistence",
+      "type": "persistence",
+      "criticality": "P0",
+      "severity": "P0",
+      "lastRun": null,
+      "moduleIds": [
+        "json-persistence"
+      ],
+      "health": "green",
+      "lastVerifiedCommit": null,
+      "testCoverage": "integration",
+      "notes": "pg dependency unused; DB gap"
+    },
+    {
+      "id": "feat-mobile-dashboard",
+      "name": "Mobile Control Center UI",
+      "type": "ui",
+      "criticality": "P1",
+      "moduleIds": [
+        "screen-DashboardScreen",
+        "mobile-api-client"
+      ],
+      "health": "green",
+      "testCoverage": "component+e2e",
+      "notes": "",
+      "lastVerifiedCommit": null
+    },
+    {
+      "id": "feat-cicd",
+      "name": "CI/CD pipeline integration",
+      "type": "integration",
+      "criticality": "P2",
+      "severity": "P2",
+      "lastRun": null,
+      "moduleIds": [
+        "cicd-mock"
+      ],
+      "health": "green",
+      "lastVerifiedCommit": null,
+      "testCoverage": "unit",
+      "notes": "Mock provider only until real provider"
+    }
+  ],
+  "traceability": {
+    "defects": []
+  },
+  "vitest": {
+    "numTotalTests": 45,
+    "numPassedTests": 45,
+    "numFailedTests": 0
+  }
+}
+```

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "cc8edf73-19aa-491e-9c81-89acb83c2792",
+    "actor": "system",
+    "eventType": "WorkflowEngine.start",
+    "payload": {},
+    "relatedEntity": {
+      "type": "run",
+      "id": "engine"
+    },
+    "createdAt": "2026-03-20T02:21:37.275Z"
+  }
+]

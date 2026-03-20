@@ -1,0 +1,30 @@
+{
+  "name": "@app-core/test-hardening",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "run:inventory": "tsx src/inventory/generateInventory.ts",
+    "run:deps-audit": "tsx src/inventory/depsAudit.ts",
+    "run:docs-check": "tsx src/inventory/docsConsistency.ts",
+    "phase:smoke": "tsx src/phases/smoke.ts",
+    "phase:regression": "tsx src/phases/regression.ts",
+    "phase:deep": "tsx src/phases/deep.ts",
+    "phase:chaos": "tsx src/phases/chaos.ts",
+    "phase:e2e": "tsx src/phases/e2e.ts",
+    "run:aggregate": "tsx src/reports/aggregate.ts",
+    "run:verify": "tsx src/cli.ts verify",
+    "run:verify:partial": "cross-env ALLOW_PHASE_CONTINUE=1 tsx src/cli.ts verify",
+    "validate:defects": "tsx src/defects/validateDefects.ts",
+    "e2e:playwright": "playwright test -c e2e/playwright.config.ts",
+    "e2e:playwright:web": "playwright test -c e2e/web/playwright.web.config.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.1",
+    "cross-env": "^7.0.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,42 @@
+# Production-like backend image (JSON persistence volume recommended)
+
+FROM node:22-bookworm-slim AS build
+
+WORKDIR /app
+
+COPY backend/package.json backend/package-lock.json ./
+
+RUN npm ci
+
+COPY backend/tsconfig.json ./
+
+COPY backend/src ./src
+
+RUN npm run build
+
+
+
+FROM node:22-bookworm-slim
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+
+RUN groupadd -r app && useradd -r -g app app
+
+COPY --from=build /app/package.json /app/package-lock.json ./
+
+COPY --from=build /app/dist ./dist
+
+RUN npm ci --omit=dev && chown -R app:app /app
+
+USER app
+
+EXPOSE 4000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD node -e "require('http').get('http://127.0.0.1:4000/api/health',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"
+
+CMD ["node", "dist/index.js"]
+
+

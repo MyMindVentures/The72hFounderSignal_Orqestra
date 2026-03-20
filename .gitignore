@@ -1,0 +1,35 @@
+# Dependencies
+
+**/node_modules/
+
+
+
+# Backend
+
+backend/dist/
+
+backend/coverage/
+
+backend/reports/
+
+backend/.state/
+
+backend/.state-e2e/
+
+
+
+# Test hardening artifacts
+
+app_core/test_hardening/reports/artifacts/
+
+app_core/test_hardening/dist/
+
+
+
+# OS
+
+.DS_Store
+
+Thumbs.db
+
+

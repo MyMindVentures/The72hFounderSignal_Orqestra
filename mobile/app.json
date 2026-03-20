@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Control Center",
+    "slug": "autonomous-control-center-mobile",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#050816"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {},
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-asset",
+      "expo-router",
+      "expo-font"
+    ]
+  }
+}

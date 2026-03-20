@@ -1,0 +1,153 @@
+{
+  "generatedAt": "2026-03-20T00:48:04.554Z",
+  "repoRoot": "D:/GitHub_Local_Repos/VibeCoding_PS",
+  "backend": [
+    {
+      "id": "api-router",
+      "kind": "router",
+      "path": "backend/src/routes.ts"
+    },
+    {
+      "id": "workflow-engine",
+      "kind": "service",
+      "path": "backend/src/engine/workflowEngine.ts"
+    },
+    {
+      "id": "json-persistence",
+      "kind": "persistence",
+      "path": "backend/src/persistence/jsonPersistence.ts"
+    },
+    {
+      "id": "sse-hub",
+      "kind": "realtime",
+      "path": "backend/src/realtime/sseHub.ts"
+    },
+    {
+      "id": "agent-task-queue",
+      "kind": "queue",
+      "path": "backend/src/queue/agentTaskQueue.ts"
+    },
+    {
+      "id": "cicd-mock",
+      "kind": "integration",
+      "path": "backend/src/cicd/mockPipelineProvider.ts"
+    },
+    {
+      "id": "metrics-store",
+      "kind": "observability",
+      "path": "backend/src/observability/metricsStore.ts"
+    },
+    {
+      "id": "route-admin",
+      "kind": "route",
+      "path": "backend/src/routes/admin.ts"
+    },
+    {
+      "id": "route-agents",
+      "kind": "route",
+      "path": "backend/src/routes/agents.ts"
+    },
+    {
+      "id": "route-artifacts",
+      "kind": "route",
+      "path": "backend/src/routes/artifacts.ts"
+    },
+    {
+      "id": "route-audit",
+      "kind": "route",
+      "path": "backend/src/routes/audit.ts"
+    },
+    {
+      "id": "route-blueprints",
+      "kind": "route",
+      "path": "backend/src/routes/blueprints.ts"
+    },
+    {
+      "id": "route-environments",
+      "kind": "route",
+      "path": "backend/src/routes/environments.ts"
+    },
+    {
+      "id": "route-health",
+      "kind": "route",
+      "path": "backend/src/routes/health.ts"
+    },
+    {
+      "id": "route-jobs",
+      "kind": "route",
+      "path": "backend/src/routes/jobs.ts"
+    },
+    {
+      "id": "route-metrics",
+      "kind": "route",
+      "path": "backend/src/routes/metrics.ts"
+    },
+    {
+      "id": "route-projects",
+      "kind": "route",
+      "path": "backend/src/routes/projects.ts"
+    },
+    {
+      "id": "route-runs",
+      "kind": "route",
+      "path": "backend/src/routes/runs.ts"
+    },
+    {
+      "id": "route-stream",
+      "kind": "route",
+      "path": "backend/src/routes/stream.ts"
+    },
+    {
+      "id": "route-tasks",
+      "kind": "route",
+      "path": "backend/src/routes/tasks.ts"
+    }
+  ],
+  "mobile": [
+    {
+      "id": "mobile-app",
+      "kind": "ui",
+      "path": "mobile/src/App.tsx"
+    },
+    {
+      "id": "mobile-api-client",
+      "kind": "client",
+      "path": "mobile/src/lib/api.ts"
+    },
+    {
+      "id": "screen-BlueprintUploadScreen",
+      "kind": "screen",
+      "path": "mobile/src/screens/BlueprintUploadScreen.tsx"
+    },
+    {
+      "id": "screen-DashboardScreen",
+      "kind": "screen",
+      "path": "mobile/src/screens/DashboardScreen.tsx"
+    },
+    {
+      "id": "screen-JobDetailScreen",
+      "kind": "screen",
+      "path": "mobile/src/screens/JobDetailScreen.tsx"
+    },
+    {
+      "id": "screen-ProjectListScreen",
+      "kind": "screen",
+      "path": "mobile/src/screens/ProjectListScreen.tsx"
+    }
+  ],
+  "docs": [
+    {
+      "id": "readme-root",
+      "path": "README.md"
+    },
+    {
+      "id": "build-prompt",
+      "path": "BuildPrompt.md"
+    },
+    {
+      "id": "backend-readme",
+      "path": "backend/README.md",
+      "notes": "may be missing; docs check flags"
+    }
+  ]
+}

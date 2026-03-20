@@ -1,0 +1,58 @@
+[
+  {
+    "id": "agent-architecture",
+    "agentType": "architecture",
+    "capabilities": [],
+    "status": "idle",
+    "lastHeartbeat": "2026-03-20T02:21:37.274Z"
+  },
+  {
+    "id": "agent-coding",
+    "agentType": "coding",
+    "capabilities": [],
+    "status": "idle",
+    "lastHeartbeat": "2026-03-20T02:21:37.274Z"
+  },
+  {
+    "id": "agent-testing",
+    "agentType": "testing",
+    "capabilities": [],
+    "status": "idle",
+    "lastHeartbeat": "2026-03-20T02:21:37.274Z"
+  },
+  {
+    "id": "agent-debugging",
+    "agentType": "debugging",
+    "capabilities": [],
+    "status": "idle",
+    "lastHeartbeat": "2026-03-20T02:21:37.274Z"
+  },
+  {
+    "id": "agent-devops",
+    "agentType": "devops",
+    "capabilities": [],
+    "status": "idle",
+    "lastHeartbeat": "2026-03-20T02:21:37.274Z"
+  },
+  {
+    "id": "agent-security",
+    "agentType": "security",
+    "capabilities": [],
+    "status": "idle",
+    "lastHeartbeat": "2026-03-20T02:21:37.274Z"
+  },
+  {
+    "id": "agent-documentation",
+    "agentType": "documentation",
+    "capabilities": [],
+    "status": "idle",
+    "lastHeartbeat": "2026-03-20T02:21:37.274Z"
+  },
+  {
+    "id": "agent-release",
+    "agentType": "release",
+    "capabilities": [],
+    "status": "idle",
+    "lastHeartbeat": "2026-03-20T02:21:37.274Z"
+  }
+]

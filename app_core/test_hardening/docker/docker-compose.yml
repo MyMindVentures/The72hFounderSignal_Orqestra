@@ -1,0 +1,75 @@
+# Compose from repository root:
+
+#   docker compose -f app_core/test_hardening/docker/docker-compose.yml up --build
+
+services:
+
+  backend:
+
+    build:
+
+      context: ../../..
+
+      dockerfile: app_core/test_hardening/docker/Dockerfile.backend
+
+    ports:
+
+      - "4000:4000"
+
+    environment:
+
+      PORT: "4000"
+
+      STATE_DIR: /data/state
+
+    volumes:
+
+      - backend_state:/data/state
+
+    healthcheck:
+
+      test: ["CMD", "node", "-e", "require('http').get('http://127.0.0.1:4000/api/health',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"]
+
+      interval: 15s
+
+      timeout: 5s
+
+      retries: 5
+
+      start_period: 20s
+
+
+
+  # Optional profile for future Postgres-backed tests: `docker compose --profile db up`
+
+  postgres:
+
+    profiles: ["db"]
+
+    image: postgres:16-alpine
+
+    environment:
+
+      POSTGRES_USER: app
+
+      POSTGRES_PASSWORD: app
+
+      POSTGRES_DB: app
+
+    ports:
+
+      - "5432:5432"
+
+    volumes:
+
+      - pg_data:/var/lib/postgresql/data
+
+
+
+volumes:
+
+  backend_state:
+
+  pg_data:
+
+
